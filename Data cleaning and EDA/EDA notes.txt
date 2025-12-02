@@ -35,14 +35,30 @@ kocaeli           1298
 I noticed that some columns have "unknown" and "bilinmiyor", so I merged both to avoid confusion in further steps when model training. 
 
 - I observed strong correlation of price with room count, bathroom count, net area, and gross area (evident through
-corrrelation matrix). 
+  corrrelation matrix). 
+
 - For heating type and building age, it was a little trickier since they are categorical data,
-but through filtering I am confident that I can see a positive correlation, where older houses or those with worse
-heating are generally the same in price as small houses which are significantly smaller or have good heating types. 
+  but through filtering I am confident that I can see a positive correlation, where older houses or those with worse
+  heating are generally the same in price as small houses which are significantly smaller or have good heating types. 
+
 - I am still unsure about floor location, since I saw a strong correlation in the correlation matrix and through 
-pearson correlation, but was unable to observe it through box plots and general filters. 
+  pearson correlation, but was unable to observe it through box plots and general filters. 
+
+- For heating type and building age, I was thinking of encoding them with ordinal encoding since some categories are 
+  less desirable. The same could be said about room and bathroom count, though I think we can also use label encoding
+  since they are numerical
+
+- Title_Deed_Status, Furnished_Status, and Investment_Eligibility have large amounts of unknown data which poses an issue.
+  Furnished_status is also unreliable, since furnished houses showed LOWER price. 
+
+- Columns I think we should consider dropping are total building floors and furnished status, since I do not see a logical
+  correlation between them and price.
+
 
 **Important note:** Houses in Istanbul and Aydin seemed to be the most expensive. However, only 7 houses from 
                     istanbul and 57 houses from Aydin can be found throughout the entire dataset. I'm unsure 
                     but I suspect that they could affect the model training and might lead to incorrect 
                     predicitons about house prices in both Istanbul and Aydin
+
+
+
