@@ -1,0 +1,28 @@
+
+
+
+1. Net area   SCALING
+2. Grooss area   SCALING
+
+
+3. Room count    ORDINAL 
+4. Building age  ORDINAL 
+5. Heating type  ORDINAL
+6. Bathroom count  ORDINAL
+
+
+7. City  TARGET SMOOTHING
+
+
+8. Occupancy status   ONE HOT
+9. Investment elligibility   ONE HOT
+10. Floor location ONE HOT 
+11. Title deed status   ONE HOT
+
+
+scaled_net_gross = StandardScaler()
+df[['Net_area_scaled', 'Gross_area_scaled']] = scaled_net_gross.fit_transform(df[['Net_Area', 'Gross_Area']])
+df = df.drop(columns = ['Net_Area','Gross_Area'])
+
+with open("Net_gross_scaled.pkl", "wb") as f:
+    pickle.dump(scaled_net_gross, f)
