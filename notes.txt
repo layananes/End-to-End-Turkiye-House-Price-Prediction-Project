@@ -1,0 +1,12 @@
+Net_Area	
+Gross_Area	
+Room_Count	     ORDINAL
+Floor_Location   ORDINAL
+Building_Age     ORDINAL
+Heating_Type	 ORDINAL
+Price	         
+City	         ORDINAL
+Occupancy_Status	LABEL
+Investment_Eligibility  LABEL
+Title_Deed_Status	    LABEL
+Bathroom_Count       ORDINAL
